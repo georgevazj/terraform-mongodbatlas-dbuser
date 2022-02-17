@@ -4,10 +4,10 @@ variable "database_username" {
   description = "(Required) MongoDB database username"
 }
 
-variable "database_password" {
-  type = string
-  description = "(Required) MongoDB database user password"
-}
+# variable "database_password" {
+#  type = string
+#  description = "(Required) MongoDB database user password"
+# }
 
 variable "project_id" {
   type = string

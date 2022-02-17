@@ -11,10 +11,16 @@ terraform {
 provider "mongodbatlas" {
 }
 
+resource "random_password" "password" {
+  length           = 16
+  special          = true
+  override_special = "/@£$"
+}
+
 resource "mongodbatlas_database_user" "user" {
   project_id = var.project_id
   username = var.database_username
-  password = var.database_password
+  password = random_password.password.result
   auth_database_name = "admin"
 
   roles {
